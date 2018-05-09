@@ -549,10 +549,18 @@ typedef struct {
 typedef struct {
 	int id;
 	systime_t rx_time;
-	float rpm;
-	float current;
+	float rpm;				// electrical rpm
+	float current;			// battery current
 	float duty;
 } can_status_msg;
+
+typedef struct {
+	int id;
+	systime_t rx_time;
+	float u_bat;			// battery voltage(3 bytes)
+	float fet_temp;			// FET temperature(3 bytes)
+	float i_mot;			// motor current(2 bytes)
+} can_status_msg2;
 
 typedef struct {
 	uint8_t js_x;
